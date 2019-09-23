@@ -1,0 +1,30 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div hidden id="object_id">
+        {{ instance.id }}
+    </div>
+
+
+    <div align = 'center' class="center">
+            <span><button id="upvote" class="btn btn-outline-light">Upvote</button></span>
+            <span><img width="300px" height="300px" src="{{ instance.cover.url }}" alt=""></span>
+            <span><button id="downvote" class="btn btn-dark">Downvote</button></span>
+        </div>
+
+    <div align = 'center'>
+        <span id="upvote_count">{{upvote_count}}</span>
+        <span id="downvote_count">{{downvote_count}}</span>
+    </div>
+
+    <div align = 'center'>
+        <span><a href="{{previous}}">Previous</a></span>
+        <span><a href="{{following}}">Next</a></span>
+    </div>
+
+{% endblock content %}
+
+{% block script %}
+    <script  type="module" src="{% static 'app/vote.js' %}"></script>
+{% endblock script %}

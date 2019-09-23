@@ -1,0 +1,6 @@
+{% autoescape off %}
+Hi {{ user.username }},
+Please click on the link to confirm your registration,
+{% comment %} http://{{ 'localhost:8000' }}{% url 'activate' uidb64=uid token=token %} {% endcomment %}
+http://{{ domain }}{% url 'users:activate' uidb64=uid token=token %}
+{% endautoescape %}
