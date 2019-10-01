@@ -2,3 +2,4 @@ email_stuff.py
 db.sqlite3
 __pycache__
 .pytest_cache
+some_file.txt
